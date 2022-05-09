@@ -27,23 +27,23 @@ jobs:
           push: true
           tags: eugjj/sa54_randnum:test
       - 
-        - name: Send custom JSON data to Slack workflow
-          id: slack
-          uses: slackapi/slack-github-action@v1.18.0
-          with:
-            payload: |
-              {
-                "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-                "blocks": [
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git@github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
-                    }
+        name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git@github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
                   }
-                ]
-              }
+                }
+              ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.FINAL_SUBMISSION }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
