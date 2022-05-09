@@ -31,7 +31,6 @@ jobs:
           id: slack
           uses: slackapi/slack-github-action@v1.18.0
           with:
-            # For posting a rich message using Block Kit
             payload: |
               {
                 "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
@@ -41,18 +40,10 @@ jobs:
                     "text": {
                       "type": "mrkdwn",
                       "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git@github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.FINAL_SUBMISSION }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-  
                     }
                   }
                 ]
               }
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-            SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.FINAL_SUBMISSION }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
