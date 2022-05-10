@@ -39,7 +39,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git@github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
+                    "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git://github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
                   }
                 }
               ]
