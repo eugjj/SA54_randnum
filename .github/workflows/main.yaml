@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
     tag:
-    - test
+    - final
 jobs:
   build_and_upload:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: eugjj/sa54_randnum:test
+          tags: eugjj/sa54_randnum:final
       - 
         name: Send custom JSON data to Slack workflow
         id: slack
@@ -39,7 +39,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git://github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
+                    "text": "Name: Ong Jun Jie, Eugene\nMatriculation: A0249487J\nEmail: e0941680@u.nus.edu\nRepo: git://github.com:eugjj/SA54_randnum.git \nImage name: eugjj/sa54_randnum:final \nImage URL: https://hub.docker.com/repository/docker/eugjj/sa54_randnum"
                   }
                 }
               ]
